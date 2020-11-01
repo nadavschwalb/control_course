@@ -1,4 +1,4 @@
-x = [1 2 3 4];
-y = [2 2 2 2];
-z = x'*y;
-display(z)
+sym d
+
+eqn = d/sqrt(d^2 + 3.88^2) == 0.965;
+solve(eqn,d)
