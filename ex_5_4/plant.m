@@ -1,7 +1,7 @@
  %assign P(s)
-K = 10;
+K = 40;
 Num = 1;
-DNum = [0.2 1.2 1 0]; 
+DNum = [1 2 0]; 
 P = tf(Num,DNum);
 [Gm,Pm,Wcg,Wcp] = margin(P);
 display(P);
