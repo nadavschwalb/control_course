@@ -4,8 +4,7 @@ display(G);
 
 %find closed loop gain peak
 [gpeak,fpeak] = getPeakGain(G);
-figure(4);
-bodeplot(G);
+
 gpeak = mag2db(gpeak); %convert to db
 fprintf("gain peak: %f, freaquency peak %f\n",gpeak,fpeak);
 
@@ -24,7 +23,14 @@ display(Pre);
 %check closed loop with prefilter
 [gpeak,fpeak] = getPeakGain(Pre*G);
 gpeak = mag2db(gpeak); %convert to db
-figure(5);
+
+%output figure T, Pre*T
+figure('Name','T & Pre*T');
+subplot(1,2,1)
+bodeplot(G);
+grid on;grid minor;
+subplot(1,2,2);
 bodeplot(Pre*G);
+grid on;grid minor;
 
 fprintf("desired peak: %f,new peak: %f freaquency peak %f\n",npeak,gpeak,fpeak);

@@ -7,5 +7,13 @@ display(C_1);
 L_1 = K*C_1*P;
 [Gm,Pm,Wcg,Wcp] = margin(L_1);
 fprintf("F*L:\n GM: %f, PM %f, Wcg: %f, Wcp: %f\n",Gm,Pm,Wcg,Wcp);
-figure(2);
-bodeplot(L_1);
+
+%output figure L_1
+figure('Name','K*C_1*P');
+subplot(1,2,1);
+margin(L_1);
+grid on;grid minor;
+
+subplot(1,2,2);
+nichols(L_1)
+grid on;grid minor;

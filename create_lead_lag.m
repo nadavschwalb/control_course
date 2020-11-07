@@ -20,7 +20,7 @@ display(C);
 GM_pre_status = input('Enter true if gm pre filter added, false otherwise: ','s');
 if strcmp(GM_pre_status,'true')
     L = K*C_1*C*P;
-elseif strcmp(C_type,'false')
+elseif strcmp(GM_pre_status,'false')
     L = K*C*P;
 else
     disp('wrong input');
@@ -30,5 +30,14 @@ display(L);
 %check margins
 [Gm,Pm,Wcg,Wcp] = margin(L);
 fprintf("L:\n GM: %f, PM %f, Wcg: %f, Wcp: %f\n",Gm,Pm,Wcg,Wcp);
-figure(3);
+
+
+%output figure L
+figure('Name','L');
+subplot(1,2,1);
 margin(L);
+grid on;grid minor;
+
+subplot(1,2,2);
+nichols(L)
+grid on;grid minor;
