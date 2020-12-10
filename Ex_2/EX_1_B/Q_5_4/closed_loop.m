@@ -9,7 +9,7 @@ gpeak = mag2db(gpeak); %convert to db
 fprintf("gain peak: %f, freaquency peak %f\n",gpeak,fpeak);
 
 %find d of pre-filter to fix closed loop gain
-npeak = 1; %npeak is in db
+npeak = 0.8*gpeak; %npeak is in db
 fprintf("lower peak from %fdb to %fdb by %fdb\n",gpeak,npeak,npeak-gpeak);
 peak_diff = db2mag(npeak-gpeak);
 

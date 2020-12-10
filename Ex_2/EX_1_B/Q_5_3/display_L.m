@@ -3,9 +3,9 @@ function display_L(L,Name)
 %   Detailed explanation goes here
 [Gm,Pm,Wcg,Wcp] = margin(L);
 display(L);
-fprintf("%s:\n GM: %f, PM %f, Wcg: %f, Wcp: %f\n",Name,Gm,Pm,Wcg,Wcp);
+fprintf("K*P:\n GM: %f, PM %f, Wcg: %f, Wcp: %f\n",Gm,Pm,Wcg,Wcp);
 
-%output figure 
+%output figure K*P
 figure('Name',Name);
 
 subplot(1,2,1);
